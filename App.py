@@ -28,9 +28,6 @@ class App(customtkinter.CTk):
         self.FrameList = FrameList(master=self)
         #self.FrameList.grid(row=1, column=1, padx=20, pady=20, sticky="ns")
 
-    #Métodos
-
-
 #Inicialização
 app = App()
 app.mainloop()
