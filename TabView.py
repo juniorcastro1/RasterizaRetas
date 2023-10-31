@@ -27,7 +27,6 @@ class TabView(customtkinter.CTkTabview):
         self.buttonReta = customtkinter.CTkButton(master=self.tab('Reta'), command=lambda: self.adicionarReta(tkEntryVar), text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
         self.buttonRasterizarReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.rasterize,text="Rasterizar", font=("Inconsolata", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
         self.buttonApagaMatrizReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
-        self.FrameColorsReta = FrameColors(master=self.tab('Reta'))
         
         self.textBoxReta = customtkinter.CTkTextbox(master=self.tab('Reta'), width=300,height=300, corner_radius=24, font=("Inconsolata", 14))
         self.textBoxReta.grid(row=1, column=1)
@@ -44,6 +43,7 @@ class TabView(customtkinter.CTkTabview):
         self.entrySeg = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntrySegVar, width=50, height=62, font=('Inconsolata', 24))
         self.buttonCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=lambda: self.adicionarCurva(tkEntryVarCurva, tkEntryTVar, tkEntrySegVar),text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
         self.buttonRasterizarCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.rasterize, text="Rasterizar", font=("Inconsolata", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
+        self.buttonApagaMatrizCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=100, height=62)
 
         self.textBoxCurva = customtkinter.CTkTextbox(master=self.tab('Curva'), width=200,height=300, corner_radius=24, font=("Inconsolata", 12))
         self.textBoxCurva.grid(row=1, column=3)
@@ -54,6 +54,8 @@ class TabView(customtkinter.CTkTabview):
         self.entrySeg.grid(row=1, column=2, padx=20, pady=20)
         self.buttonCurva.grid(row=1, column=0, padx=20, pady=20, sticky='s')
         self.buttonRasterizarCurva.grid(row=1, column=1, padx=20, pady=20, sticky='s')
+        self.buttonApagaMatrizCurva.grid(row=2, column=3, padx=20, pady=20, sticky='s')
+
 
         #Polígono Tab
         self.entryPoligono = customtkinter.CTkEntry(master=self.tab('Polígono'), textvariable=tkEntryVarPoligono, placeholder_text="ex: -1,-0;1,1", width=600, height=62, font=("Inconsolata", 24))
@@ -81,6 +83,8 @@ class TabView(customtkinter.CTkTabview):
     def zeraMatriz(self):
         rt.myMatriz.zerarMatriz()
         self.textBoxReta.delete('0.0', 'end')
+        self.textBoxCurva.delete('0.0', 'end')
+        self.textBoxPoligono.delete('0.0', 'end')
 
     def adicionarReta(self, entryData):
         points = self.transformToRetaMatrix(entryData)
