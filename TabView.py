@@ -91,8 +91,8 @@ class TabView(customtkinter.CTkTabview):
         tempLine = rt.Reta(points, (random.randint(0,255),random.randint(0,255),random.randint(0,255)))
         self.matrizTela.add_Reta(tempLine)
         self.textBoxReta.insert('0.0', f'Reta {points}\n')
-        self.textBoxCurva.insert('0.0', f'Reta {points}\n')
-        self.textBoxPoligono.insert('0.0', f'Reta {points}\n')
+        self.textBoxCurva.insert('0.0', f'Curva {points}\n')
+        self.textBoxPoligono.insert('0.0', f'Polígono {points}\n')
 
 
     def adicionarCurva(self, entryData, entryTData, numSeg):
@@ -100,18 +100,18 @@ class TabView(customtkinter.CTkTabview):
         tangents = self.transformToRetaMatrix(entryTData)
         tempLine = rt.Curva(points, tangents,numSeg.get(), (random.randint(0,255),random.randint(0,255),random.randint(0,255)))
         self.matrizTela.add_Curva(tempLine)
-        self.textBoxReta.insert('0.0', f'Curva {points}\n')
-        self.textBoxCurva.insert('0.0', f'Reta {points}\n')
-        self.textBoxPoligono.insert('0.0', f'Reta {points}\n')
+        self.textBoxReta.insert('0.0', f'Reta {points}\n')
+        self.textBoxCurva.insert('0.0', f'Curva {points}\n')
+        self.textBoxPoligono.insert('0.0', f'Polígono {points}\n')
 
     def adicionarPoligonos(self, entryData):
         points = self.transformListPoligono(entryData)
         print(points)
         tempPoligono = rt.Poligono(points, (random.randint(0,255), random.randint(0,255), random.randint(0,255)))
         self.matrizTela.add_Poligono(tempPoligono)
-        self.textBoxReta.insert('0.0', f'Polígono {points}\n')
-        self.textBoxCurva.insert('0.0', f'Reta {points}\n')
-        self.textBoxPoligono.insert('0.0', f'Reta {points}\n')
+        self.textBoxReta.insert('0.0', f'Reta {points}\n')
+        self.textBoxCurva.insert('0.0', f'Curva {points}\n')
+        self.textBoxPoligono.insert('0.0', f'Polígono {points}\n')
 
     def transformToRetaMatrix(self, entryData):
         entry = entryData.get()
