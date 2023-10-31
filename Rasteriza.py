@@ -14,8 +14,7 @@ pontos_triang_equilatero = [(1, 0), (-0.5, -0.866), (-0.5, 0.866)] #triangulo eq
 resolutions = [(50, 50), (100, 100), (300, 300), (600, 600), (600, 800), (1080, 1920)]
 
 class Matriz:
-    def __init__(self):
-        #Entender melhor como essa função funciona. 
+    def __init__(self): 
         self.matriz = [np.zeros(res + (3,), dtype=np.uint8) for res in resolutions]
 
     def zerarMatriz(self):
@@ -30,8 +29,7 @@ class Reta:
     # Desenhar Reta
     def draw_Reta(self, matriz):
         for matriz_desenho in matriz:
-            for i in range(len(self.pontos) - 1):
-                #Entender melhor se isso é ponteiro ou nao 
+            for i in range(len(self.pontos) - 1): 
                 x1, y1 = ajustar_res(*self.pontos[i], *matriz_desenho.shape[:2])
                 x2, y2 = ajustar_res(*self.pontos[i + 1], *matriz_desenho.shape[:2])
                 pontos_rasterizados = rasterizar(x1, y1, x2, y2)
