@@ -4,13 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-#Declarar pontos para plotar
-pontos_quad = [(0.8, -0.8), (0.8, -0.4), (0.4, -0.4), (0.4, -0.8)]  # quadrado
-pontos_hex = [(0.8, 0.4), (0.6, 0.6), (0.4, 0.6), (0.2, 0.4), (0.4, 0.2), (0.6, 0.2)]  # heaxagono
-pontos_triang = [(-0.2, -0.6), (-0.8, -0.4), (-0.8, -0.8)]  # triangulo
-pontos_pent = [(-0.2, 0.4), (-0.45, 0.6), (-0.8, 0.55), (-0.8, 0.25), (-0.45, 0.2)]  # pentagono
-pontos_triang_equilatero = [(1, 0), (-0.5, -0.866), (-0.5, 0.866)] #triangulo equilatero
-
 resolutions = [(50, 50), (100, 100), (300, 300), (600, 600), (600, 800), (1080, 1920)]
 
 class Matriz:
