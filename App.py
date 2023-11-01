@@ -1,5 +1,4 @@
 import tkinter as tk
-from typing import Optional, Tuple, Union
 import customtkinter
 from TabView import TabView
 
@@ -12,7 +11,7 @@ class App(customtkinter.CTk):
         self.title("Rasterização de Retas")
         self.geometry("1080x600")
 
-        self.TitleLabel = customtkinter.CTkLabel(self, text="Rasterização - Computação Gráfica", font=('Inconsolata',40))
+        self.TitleLabel = customtkinter.CTkLabel(self, text="Rasterização - Computação Gráfica", font=('Helvetica',40))
         self.TitleLabel.grid(row=0, column=0, padx=20, pady=20, sticky='se')
         
         #TabView

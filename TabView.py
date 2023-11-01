@@ -2,8 +2,6 @@ import tkinter as tk
 import customtkinter
 import Rasteriza as rt
 import random
-from FrameColors import FrameColors
-
 
 class TabView(customtkinter.CTkTabview):
     def __init__(self, master, **kwargs):
@@ -23,14 +21,13 @@ class TabView(customtkinter.CTkTabview):
         #Reta Tab
         self.rowconfigure((0,1), weight=1, uniform='a')
 
-        self.entryReta = customtkinter.CTkEntry(master=self.tab('Reta'), textvariable=tkEntryVar, width=600, height=62, font=("Inconsolata", 24))
-        self.buttonReta = customtkinter.CTkButton(master=self.tab('Reta'), command=lambda: self.adicionarReta(tkEntryVar), text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
-        self.buttonRasterizarReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.rasterize,text="Rasterizar", font=("Inconsolata", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
-        self.buttonApagaMatrizReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
+        self.entryReta = customtkinter.CTkEntry(master=self.tab('Reta'), textvariable=tkEntryVar, width=600, height=62, font=("Helvetica", 24))
+        self.buttonReta = customtkinter.CTkButton(master=self.tab('Reta'), command=lambda: self.adicionarReta(tkEntryVar), text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=272, height=62)
+        self.buttonRasterizarReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.rasterize,text="Rasterizar", font=("Helvetica", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
+        self.buttonApagaMatrizReta = customtkinter.CTkButton(master=self.tab('Reta'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=272, height=62)
+        self.textBoxReta = customtkinter.CTkTextbox(master=self.tab('Reta'), width=300,height=300, corner_radius=24, font=("Helvetica", 14))
         
-        self.textBoxReta = customtkinter.CTkTextbox(master=self.tab('Reta'), width=300,height=300, corner_radius=24, font=("Inconsolata", 14))
         self.textBoxReta.grid(row=1, column=1)
-
         self.entryReta.grid(row=1, column=0, padx=20, pady=20)
         self.buttonReta.grid(row=1, column=0, padx=20, pady=20, sticky='sw')
         self.buttonRasterizarReta.grid(row=1, column=0, padx=20, pady=20, sticky='se')
@@ -38,16 +35,15 @@ class TabView(customtkinter.CTkTabview):
 
         #Curva Tab
         self.segLabel = customtkinter.CTkLabel(master=self.tab('Curva'), text='Segmentos', height=10, width=50)
-        self.entryCurva = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntryVarCurva, width=300, height=62, font=("Inconsolata", 24))
-        self.entryTan = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntryTVar, width=300, height=62, font=('Inconsolata', 24))
-        self.entrySeg = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntrySegVar, width=50, height=62, font=('Inconsolata', 24))
-        self.buttonCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=lambda: self.adicionarCurva(tkEntryVarCurva, tkEntryTVar, tkEntrySegVar),text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
-        self.buttonRasterizarCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.rasterize, text="Rasterizar", font=("Inconsolata", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
-        self.buttonApagaMatrizCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=100, height=62)
-
-        self.textBoxCurva = customtkinter.CTkTextbox(master=self.tab('Curva'), width=200,height=300, corner_radius=24, font=("Inconsolata", 12))
+        self.entryCurva = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntryVarCurva, width=300, height=62, font=("Helvetica", 24))
+        self.entryTan = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntryTVar, width=300, height=62, font=('Helvetica', 24))
+        self.entrySeg = customtkinter.CTkEntry(master=self.tab('Curva'), textvariable=tkEntrySegVar, width=50, height=62, font=('Helvetica', 24))
+        self.buttonCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=lambda: self.adicionarCurva(tkEntryVarCurva, tkEntryTVar, tkEntrySegVar),text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=272, height=62)
+        self.buttonRasterizarCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.rasterize, text="Rasterizar", font=("Helvetica", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
+        self.buttonApagaMatrizCurva = customtkinter.CTkButton(master=self.tab('Curva'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=100, height=62)
+        self.textBoxCurva = customtkinter.CTkTextbox(master=self.tab('Curva'), width=200,height=300, corner_radius=24, font=("Helvetica", 12))
+        
         self.textBoxCurva.grid(row=1, column=3)
-
         self.entryCurva.grid(row=1, column=0, padx=20, pady=20)
         self.entryTan.grid(row=1, column=1, padx=0, pady=0)
         self.segLabel.grid(row=0, column=2, padx=0, pady=0, sticky='s')
@@ -58,12 +54,11 @@ class TabView(customtkinter.CTkTabview):
 
 
         #Polígono Tab
-        self.entryPoligono = customtkinter.CTkEntry(master=self.tab('Polígono'), textvariable=tkEntryVarPoligono, placeholder_text="ex: -1,-0;1,1", width=600, height=62, font=("Inconsolata", 24))
-        self.buttonPoligono = customtkinter.CTkButton(master=self.tab('Polígono'),command=lambda: self.adicionarPoligonos(tkEntryVarPoligono), text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
-        self.buttonRasterizarPoligono = customtkinter.CTkButton(master=self.tab('Polígono'),command=self.rasterize, text="Rasterizar", font=("Inconsolata", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
-        self.buttonApagaMatrizPoligono = customtkinter.CTkButton(master=self.tab('Polígono'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Inconsolata', 24), width=272, height=62)
-        self.FrameColorsPoligono = FrameColors(master=self.tab('Polígono'))
-        self.textBoxPoligono = customtkinter.CTkTextbox(master=self.tab('Polígono'), width=300,height=300, corner_radius=24, font=("Inconsolata", 12))
+        self.entryPoligono = customtkinter.CTkEntry(master=self.tab('Polígono'), textvariable=tkEntryVarPoligono, placeholder_text="ex: -1,-0;1,1", width=600, height=62, font=("Helvetica", 24))
+        self.buttonPoligono = customtkinter.CTkButton(master=self.tab('Polígono'),command=lambda: self.adicionarPoligonos(tkEntryVarPoligono), text="Adicionar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=272, height=62)
+        self.buttonRasterizarPoligono = customtkinter.CTkButton(master=self.tab('Polígono'),command=self.rasterize, text="Rasterizar", font=("Helvetica", 24), corner_radius=24, fg_color="#7056A6", width=272, height=62)
+        self.buttonApagaMatrizPoligono = customtkinter.CTkButton(master=self.tab('Polígono'), command=self.zeraMatriz, text="Limpar", corner_radius=24, fg_color="#7056A6",font=('Helvetica', 24), width=272, height=62)
+        self.textBoxPoligono = customtkinter.CTkTextbox(master=self.tab('Polígono'), width=300,height=300, corner_radius=24, font=("Helvetica", 12))
         
         self.textBoxPoligono.grid(row=1, column=1)
         self.entryPoligono.grid(row=1, column=0, padx=20, pady=20)

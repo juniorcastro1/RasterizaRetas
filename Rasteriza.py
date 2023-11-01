@@ -158,13 +158,6 @@ def mostrar():
         axs[i].invert_yaxis()
     plt.tight_layout()
 
-    # plt.xlim([-1, 1])
-    # plt.ylim([-1, 1])
-
-    # plt.plot([x1,x2..,xn],[y1,y2...,yn])
-    # fig.delaxes(axs[6])
-    # plt.plot(px,py)
-
     plt.show()
 
 # Realiza o calculo para redimencionar a reta em relação a resolução
@@ -248,78 +241,4 @@ def add_Resolution(resolution):
 def remove_Resolution():
     resolutions.pop()
     
-# # Cor
-# azul = (0, 0, 255)
-# vermelho = (255, 0, 0)
-# amarelo = (255, 255, 0)
-# verde = (0, 255, 0)
-# branco = (255, 255, 255)
-# rosa = (255, 20, 147)
-
-# tela = Tela()
-# # # tela.add_Reta(Reta([(y1, x1), (y2, x2)], color=azul))
-# # tela.add_Reta(Reta([(-1, -1), (1, 1)], color=azul))
-# # tela.add_Reta(Reta([(0, -1), (0, 1)], color= rosa))
-# # tela.add_Reta(Reta([(-1, 0), (1, 0)], color= rosa))
-# # tela.add_Reta(Reta([(1, -1), (-1, 1)], color=vermelho))
-
-# triangulo = Poligono(pontos_triang_equilatero, azul)
-# quadrado = Poligono(pontos_quad, vermelho)
-# hexagono = Poligono(pontos_hex, verde)
-# pentagono = Poligono(pontos_pent, rosa)
-
-
-# # Pontos de Controle (valores entre -1 e 1)
-# p0 = (-0.5, -0.5)
-# p1 = (0.5, -0.5)
-# # p2 = (0.5, 0.5)
-# # p3 = (-0.5, 0.5)
-# # p4 = (-0.5, -0.5)
-
-# # Vetores Tangentes (valores entre -1 e 1)
-# t0 = (0, -1)
-# t1 = (1, 0)
-# # t2 = (0, 1)
-# # t3 = (0, -1)
-# # t4 = (0, -1)
-
-# # Cria uma instância da classe Curva
-# curva = Curva([p0, p1], [t0, t1], amarelo)
-
-
-# # # pp = [(y1,x1),(y2,x2)...,(yn,xn)]
-# pt1 = [(0.9,-0.5), (0.5,-0.9), (0.6,0)]
-# pt2 = [(-0.4, 0.6), (-0.6,0.4), (-0.7,0.9)]
-# pq1 = [(-0.8, -0.8), (-0.6, -0.8), (-0.6, -0.6), (-0.8, -0.6)]
-# pq2 = [(0.7, 0.7), (0.9, 0.7), (0.9, 0.9), (0.7, 0.9)]
-# ph1 = [(-0.1, 0.1), (-0.3, 0.2), (-0.1, 0.3), (0.1, 0.3), (0.3, 0.2), (0.1, 0.1)]
-# ph2 = [(0.4, -0.2), (0.2, -0.4), (-0.2, -0.4), (-0.4, -0.2), (-0.2, 0), (0.2, 0)]
-
-# triangulo1 = Poligono(pt1, azul)
-# triangulo2 = Poligono(pt2, vermelho)
-
-# quadrado1 = Poligono(pq1, azul)
-# quadrado2 = Poligono(pq2, vermelho)
-
-# hexagono1 = Poligono(ph1, verde)
-# hexagono2 = Poligono(ph2, amarelo)
-
-# tela.add_Poligono(hexagono1)
-
-# # tela.add_Poligono(triangulo)
-# tela.add_Poligono(pentagono)
-# # tela.add_Poligono(triangulo2)
-# tela.add_Poligono(quadrado)
-# # tela.add_Poligono(quadrado2)
-# tela.add_Reta(Reta([(-2,-0.5), (1,-0.5 )], color=branco))
-
-# tela.add_Curva(curva)
-
-
-# tela.draw_Tela(myMatriz.matriz)
-# #mostrar()
-
-# # # rt.myMatriz.zerarMatriz()
-# # # meuPoligono = rt.Poligono([[],[]], cor)
-# # # tela.add_Poligono(meuPoligono)
 
